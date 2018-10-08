@@ -26,6 +26,10 @@ app.use(morgan('dev')); // log every request to the console
 var router = express.Router();
 require('./app/routes.js')(app,router);
 
+app.get('/', function (req, res) {
+  res.send(JSON.stringify({ Hello: 'World'}));
+ });
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
