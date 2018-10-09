@@ -14,7 +14,7 @@ const app = express();
 const PORT =3000;
 //app.use(express.static(__dirname + './dist/storAapp'));
 //app.use(express.static(path.join(__dirname, 'public')));
-//app.use('/node_modules',  express.static(__dirname + '/node_modules')); // Use NodeModules
+app.use('/node_modules',  express.static(__dirname + '/node_modules')); // Use NodeModules
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('dev')); // log every request to the console
@@ -26,9 +26,6 @@ app.use(morgan('dev')); // log every request to the console
 var router = express.Router();
 require('./app/routes.js')(app,router);
 
-app.get('/', function (req, res) {
-  res.send(JSON.stringify({ Hello: 'World'}));
- });
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
