@@ -32,9 +32,9 @@ module.exports = function(app, router) {
     //var path = require('path');
 
     // web -------------------------------------------------------------
-    // app.get('/', function(req, res) {
-    //     res.sendFile(path.resolve('./dist/storeApp/index.html'));
-    // });
+    app.get('/', function(req, res) {
+        res.sendFile(path.resolve('./public/index.html'));
+    });
 
     // app.get('*',function(req,res){
 

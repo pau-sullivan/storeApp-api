@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('dev')); // log every request to the console
 
-//app.use(express.static('public'));  //<-- public directory that contains all angular files
+app.use(express.static('public'));  //<-- public directory that contains all angular files
 //console.log(path.join(__dirname, 'public'));
 //console.log(express.static('public'));
 
