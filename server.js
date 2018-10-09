@@ -11,7 +11,8 @@ var path = require('path');
 const app = express();
 
 // const PORT = process.env.PORT || 3301;
-const PORT =3000;
+//const PORT =3000;
+var port = process.env.PORT || 8000;
 //app.use(express.static(__dirname + './dist/storAapp'));
 //app.use(express.static(path.join(__dirname, 'public')));
 app.use('/node_modules',  express.static(__dirname + '/node_modules')); // Use NodeModules
