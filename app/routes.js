@@ -1,5 +1,5 @@
-var itemController = require('./controllers/itemController');
-var itemCategoryController = require('./controllers/itemCategoryController');
+var itemController = require('./controllers/ItemController');
+var itemCategoryController = require('./controllers/ItemCategoryController');
 
 // expose the routes to our app with module.exports
 module.exports = function(app, router) {
