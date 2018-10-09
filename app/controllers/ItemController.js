@@ -1,4 +1,4 @@
-var Item = require('../models/item');
+var Item = require('../models/Item');
 
 var fs = require('fs');
 
