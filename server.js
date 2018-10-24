@@ -15,6 +15,18 @@ const app = express();
 const port = process.env.PORT || 3000;
 //app.use(express.static(__dirname + './dist/storAapp'));
 //app.use(express.static(path.join(__dirname, 'public')));
+
+//Middleware: Allows cross-domain requests (CORS)
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+  next();
+}
+
+
+app.use(allowCrossDomain);
 app.use('/node_modules',  express.static(__dirname + '/node_modules')); // Use NodeModules
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
